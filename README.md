@@ -1,15 +1,11 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Would You Rather Redux Project
 
-In the project directory, you can run:
+After downloading this project from github run 
 
-
-
-After downloading this project from github,
-run 
 ### `yarn`
-from inside the root file to install the project dependencies.
+
+from inside the root folder to install the project dependencies.
 
 After which you can run
 
