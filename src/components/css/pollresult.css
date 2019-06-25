@@ -1,0 +1,31 @@
+.pollResultContainer {
+	border-style: groove;
+	padding: 16px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.polResHeader {
+	padding: 16px;
+	border-style: groove;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.polResContainer {
+	display: flex;
+	border-style: groove;
+	align-content: space-between;
+	background-color: #f9f7f9;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 16px;
+}
+
+.polResflexItem {
+	width: 45%;
+	padding: 10px;
+}

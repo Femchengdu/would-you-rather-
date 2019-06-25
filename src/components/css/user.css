@@ -1,0 +1,15 @@
+.userContainer {
+	border-style: groove;
+	display: flex;
+	align-content: space-between;
+	background-color: #f9f7f9;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 16px;
+}
+
+.flexItem {
+	width: 45%;
+	padding: 10px;
+}

@@ -1,0 +1,16 @@
+.navList {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;  
+	background-color: #dddddd;
+}
+
+.listElement {
+	display: inline;
+	padding: 10px;
+	line-height: 2
+}
+
+.navLink {
+	text-decoration: none;
+}

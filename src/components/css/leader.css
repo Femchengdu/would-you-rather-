@@ -1,0 +1,21 @@
+.leadcontainer {
+	border-style: groove;
+	padding: 16px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.leadList {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;  
+}
+
+.leadHeader {
+	border-style: groove;
+	width: 80%;
+	padding: 16px;
+	margin-left: auto;
+	margin-right: auto;
+}
