@@ -14,14 +14,12 @@ class Poll extends Component {
 
 	handleQuestSubmit = (event) => {
 		event.preventDefault()
-		const {dispatch} = this.props
+		const {combineAnsAndQuestions} = this.props
 		const payload = {
 			qid: this.props.id,
 			answer: this.state.selected
 		} 
-		console.log('The selected value is : ', payload)
-		
-		dispatch(combineAsyncAnsQuestion(payload))
+		combineAnsAndQuestions(payload)
 		this.setState(() => ({
 			selected: ''
 		}))
@@ -85,4 +83,10 @@ const mapStateToProps = ({users, questions}, props) => {
 	return formatPoll(users, questions, props)
 }
 
-export default withRouter(connect(mapStateToProps)(Poll))
+const mapDispatchToProps = (dispatch) => {
+	return {
+		combineAnsAndQuestions: (payload) => dispatch(combineAsyncAnsQuestion(payload))
+	}
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Poll))
