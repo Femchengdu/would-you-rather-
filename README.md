@@ -1,6 +1,9 @@
 
 ## Would You Rather Redux Project
 
+This project is a web app that lets a user play the "Would You Rather" Game.
+The purpose of this project is to enable me solidify my understanding of React and Redux through practice.
+
 After downloading this project from github run 
 
 ### `yarn`
