@@ -19,7 +19,10 @@ class SelectUser extends Component {
 		const {dispatch} = this.props
 		const selectedUser = this.state.authorizedUser
 		dispatch(setAuthorizedUser(selectedUser))
-		this.props.history.push('/')
+		const redirectLocation = this.props.location
+		redirectLocation.pathname === '/logout' ?
+		this.props.history.push('/') :
+		this.props.history.push(redirectLocation)
 	}
 	render () {
 		return(
@@ -61,4 +64,5 @@ const mapStateToProps = ({users}) => {
 		users
 	}
 }
+
 export default withRouter(connect(mapStateToProps)(SelectUser))
