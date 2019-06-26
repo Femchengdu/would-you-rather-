@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {asyncAddQuestion} from '../actions/questions'
+import {asyncAddQuestion} from '../actions/shared'
 import {Redirect} from 'react-router-dom'
 import './css/newpoll.css'
 

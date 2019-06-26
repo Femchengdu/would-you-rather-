@@ -1,7 +1,6 @@
-import {getInitialData, saveQuestionAnswer} from '../utils/api'
-import {receiveUsers, updateUserAnswer} from './users'
-import {receiveQuestions, ansQuestion} from './questions'
-//import {setAuthorizedUser} from './authenticatedUser'
+import {getInitialData, saveQuestionAnswer, saveQuestion} from '../utils/api'
+import {receiveUsers, updateUserAnswer, addUserQuestion} from './users'
+import {receiveQuestions, ansQuestion, addQuestion} from './questions'
 import {showLoading, hideLoading} from 'react-redux-loading'
 
 
@@ -32,6 +31,23 @@ export const combineAsyncAnsQuestion = (payload) => {
 				dispatch(ansQuestion(questions))
 				dispatch(updateUserAnswer(users))
 			})
+			.then(() => dispatch(hideLoading()))
+	}
+}
+
+export const asyncAddQuestion = (newPoll) => {
+	return (dispatch, getState) => {
+		const {authenticatedUser} = getState()
+		dispatch(showLoading())
+		return saveQuestion({
+			author: authenticatedUser,
+			optionOneText: newPoll.quest_1,
+			optionTwoText: newPoll.quest_2
+		})
+			.then((question) => {
+				dispatch(addQuestion(question))
+				dispatch(addUserQuestion(question.id, authenticatedUser))	
+			} )
 			.then(() => dispatch(hideLoading()))
 	}
 }
