@@ -16,9 +16,9 @@ class SelectUser extends Component {
 
 	submitUser = (event) => {
 		event.preventDefault()
-		const {dispatch} = this.props
+		const {setAuthUser} = this.props
 		const selectedUser = this.state.authorizedUser
-		dispatch(setAuthorizedUser(selectedUser))
+		setAuthUser(selectedUser)
 		const redirectLocation = this.props.location
 		redirectLocation.pathname === '/logout' ?
 		this.props.history.push('/') :
@@ -65,4 +65,9 @@ const mapStateToProps = ({users}) => {
 	}
 }
 
-export default withRouter(connect(mapStateToProps)(SelectUser))
+const mapDispatchToProps = (dispatch) => {
+	return {
+		setAuthUser: (selectedUser) => dispatch(setAuthorizedUser(selectedUser))
+	}
+}
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SelectUser))
